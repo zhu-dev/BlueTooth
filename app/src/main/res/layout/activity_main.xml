@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/stateText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/btn_devices_text"
+        app:layout_constraintBottom_toTopOf="@+id/tv_receive"
+        app:layout_constraintStart_toEndOf="@+id/tv_state"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/sw_hex_ascii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sw_hex_ascii_text"
+        app:layout_constraintEnd_toStartOf="@+id/tv_receive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_receive" />
+
+    <Button
+        android:id="@+id/btn_clear_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_clear_text"
+        app:layout_constraintEnd_toStartOf="@id/tv_receive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sw_hex_ascii" />
+
+
+    <TextView
+        android:id="@+id/tv_receive"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/shape_border"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/receiveAreaHint"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/sw_hex_ascii"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_devices"
+        app:layout_constraintBottom_toTopOf="@+id/ev_send"/>
+
+    <Switch
+        android:id="@+id/sw_hex_ascii_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sw_hex_ascii_text"
+        app:layout_constraintEnd_toStartOf="@+id/ev_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ev_send" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/btn_send_text"
+        app:layout_constraintEnd_toStartOf="@id/ev_send"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_hex_ascii_send" />
+
+    <EditText
+        android:id="@+id/ev_send"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/shape_border"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="@string/inputAreaHint"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sw_hex_ascii_send"
+        app:layout_constraintTop_toBottomOf="@+id/tv_receive"  />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

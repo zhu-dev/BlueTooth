@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.startActivity">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="血压测量系统"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorPrimary"
+       android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_query"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_selector_start"
+        android:gravity="center"
+        android:text="@string/text_start_query"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_measure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tv_measure"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_selector_start"
+        android:gravity="center"
+        android:text="@string/text_start_measure"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_helper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_query"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/tv_helper"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_selector_start"
+        android:gravity="center"
+        android:text="@string/text_start_helper"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_measure"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.6" />
+</androidx.constraintlayout.widget.ConstraintLayout>

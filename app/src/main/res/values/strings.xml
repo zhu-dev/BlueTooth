@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BlueTooth</string>
+    <string name="stateText">未连接</string>
+    <string name="inputAreaHint">发送区</string>
+    <string name="btn_devices_text">连接蓝牙设备</string>
+    <string name="receiveAreaHint">接收区</string>
+    <string name="edit_send_hint">输入发送内容</string>
+    <string name="btn_send_text">发送</string>
+    <string name="sw_hex_ascii_text">16进制</string>
+    <string name="btn_clear_text">清空接收区</string>
+    <string name="text_start_query">历史数据查询</string>
+    <string name="text_start_measure">开始测量</string>
+    <string name="text_sys_pressure">收缩压</string>
+    <string name="text_dia_pressure">舒张压</string>
+    <string name="text_title">测量结果</string>
+    <string name="text_btn_input">输入</string>
+    <string name="text_hint_input">请输入测量人名字</string>
+    <string name="text_default_pressure">0/mmHg</string>
+    <string name="preference_level"><![CDATA[舒张压参考标准:\n高：> 90mmHg\n正常: 60–90mmHg\n低:< 60mmHg\n收缩压参考标准:\n高：>140mmHg\n正常: 90–140mmHg\n低: < 90mmHg]]></string>
+    <string name="text_username">用户名</string>
+    <string name="text_default_time">2019-5-1 08:00:00</string>
+    <string name="text_start_helper">串口助手</string>
+    <string name="text_measure_save">保存</string>
+    <string name="text_query_search">查询</string>
+</resources>
