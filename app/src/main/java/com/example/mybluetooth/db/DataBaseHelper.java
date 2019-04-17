@@ -1,4 +1,4 @@
-package com.example.mybluetooth.activities.db;
+package com.example.mybluetooth.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

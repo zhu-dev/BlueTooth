@@ -1,6 +1,6 @@
-package com.example.mybluetooth.activities.db;
+package com.example.mybluetooth.db;
 
-import com.example.mybluetooth.activities.manager.UserBean;
+import com.example.mybluetooth.manager.UserBean;
 
 import java.util.List;
 

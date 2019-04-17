@@ -1,4 +1,4 @@
-package com.example.mybluetooth.activities.db;
+package com.example.mybluetooth.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.mybluetooth.activities.manager.UserBean;
+import com.example.mybluetooth.manager.UserBean;
 
 import java.util.ArrayList;
 import java.util.List;

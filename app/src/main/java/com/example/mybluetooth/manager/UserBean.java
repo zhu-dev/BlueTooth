@@ -1,4 +1,4 @@
-package com.example.mybluetooth.activities.manager;
+package com.example.mybluetooth.manager;
 
 import java.util.Date;
 

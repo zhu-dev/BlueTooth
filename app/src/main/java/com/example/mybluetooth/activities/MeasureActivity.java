@@ -21,8 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mybluetooth.R;
-import com.example.mybluetooth.activities.db.DataBaseManager;
-import com.example.mybluetooth.activities.manager.UserBean;
+import com.example.mybluetooth.db.DataBaseManager;
+import com.example.mybluetooth.manager.UserBean;
 import com.example.mybluetooth.bluetooth.BluetoothManager;
 import com.example.mybluetooth.bluetooth.ConnectedThread;
 import com.example.mybluetooth.utils.DateSimpleFormatUtil;

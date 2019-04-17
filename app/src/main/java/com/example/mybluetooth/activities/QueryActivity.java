@@ -14,9 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mybluetooth.R;
-import com.example.mybluetooth.activities.db.DataBaseManager;
-import com.example.mybluetooth.activities.manager.LineChartManager;
-import com.example.mybluetooth.activities.manager.UserBean;
+import com.example.mybluetooth.db.DataBaseManager;
+import com.example.mybluetooth.manager.LineChartManager;
+import com.example.mybluetooth.manager.UserBean;
 import com.example.mybluetooth.utils.DateSimpleFormatUtil;
 import com.github.mikephil.charting.charts.LineChart;
 
@@ -70,17 +70,18 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initData() {
-        for (int i = 0; i < 12; i++) {
-            UserBean person = new UserBean();
-            person.setDia_pressure(10 + i);
-            person.setSys_pressure(15 + i);
-            dataList.add(person);
-        }
-        Date date = new Date();
-        String dateStr = DateSimpleFormatUtil.date2HmsStr(date);
-        String dateStr2 = DateSimpleFormatUtil.date2YmdStr(date);
-        Log.e(TAG, "initData: ---date--" + dateStr);
-        Log.e(TAG, "initData: ---date2--" + dateStr2);
+//        for (int i = 0; i < 12; i++) {
+//            UserBean person = new UserBean();
+//            person.setDia_pressure(10 + i);
+//            person.setSys_pressure(15 + i);
+//            dataList.add(person);
+//        }
+//        Date date = new Date();
+//        String dateStr = DateSimpleFormatUtil.date2HmsStr(date);
+//        String dateStr2 = DateSimpleFormatUtil.date2YmdStr(date);
+//        Log.e(TAG, "initData: ---date--" + dateStr);
+//        Log.e(TAG, "initData: ---date2--" + dateStr2);
+
 
     }
 
@@ -100,10 +101,12 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
                         .subscribe(new Consumer<List<UserBean>>() {
                             @Override
                             public void accept(List<UserBean> userBeans) throws Exception {
-                                users = userBeans;
-                                measureTime = users.get(0).getDateStr() +"  "+ users.get(0).getTimeStr();
+                                dataList = userBeans;
+                                lineChartManager.setDataList(dataList);
+                                measureTime = dataList.get(0).getDateStr() + " " + dataList.get(0).getTimeStr();
                                 tv_date.setText(measureTime);
-                                Log.e(TAG, "accept: ------" + users.get(0).getName());
+                                Log.e(TAG, "accept: ------" + dataList.get(0).getName());
+                                Log.e(TAG, "accept: ---dataList.size()---" + dataList.size());
                             }
                         }, new Consumer<Throwable>() {
                             @Override
