@@ -49,8 +49,6 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_query);
-        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);//设置横屏
-        initData();
         initView();
         lineChart = findViewById(R.id.chart);
         lineChartManager = new LineChartManager(lineChart, dataList);
@@ -69,22 +67,6 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
         btn_search.setOnClickListener(this);
     }
 
-    private void initData() {
-//        for (int i = 0; i < 12; i++) {
-//            UserBean person = new UserBean();
-//            person.setDia_pressure(10 + i);
-//            person.setSys_pressure(15 + i);
-//            dataList.add(person);
-//        }
-//        Date date = new Date();
-//        String dateStr = DateSimpleFormatUtil.date2HmsStr(date);
-//        String dateStr2 = DateSimpleFormatUtil.date2YmdStr(date);
-//        Log.e(TAG, "initData: ---date--" + dateStr);
-//        Log.e(TAG, "initData: ---date2--" + dateStr2);
-
-
-    }
-
 
     @Override
     public void onClick(View v) {
@@ -101,6 +83,7 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
                         .subscribe(new Consumer<List<UserBean>>() {
                             @Override
                             public void accept(List<UserBean> userBeans) throws Exception {
+                                dataList.clear();
                                 dataList = userBeans;
                                 lineChartManager.setDataList(dataList);
                                 measureTime = dataList.get(0).getDateStr() + " " + dataList.get(0).getTimeStr();
@@ -111,11 +94,16 @@ public class QueryActivity extends AppCompatActivity implements View.OnClickList
                         }, new Consumer<Throwable>() {
                             @Override
                             public void accept(Throwable throwable) throws Exception {
-                                Log.e(TAG, "accept: " + throwable.getMessage());
-                                Toast.makeText(QueryActivity.this, "读取出错", Toast.LENGTH_SHORT).show();
+                                Log.e(TAG, "throwable: " + throwable.getMessage());
                             }
                         });
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 }

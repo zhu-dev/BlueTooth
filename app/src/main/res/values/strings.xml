@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BlueTooth</string>
+    <string name="app_name">血压检测助手</string>
     <string name="stateText">未连接</string>
     <string name="inputAreaHint">发送区</string>
     <string name="btn_devices_text">连接蓝牙设备</string>
@@ -18,7 +18,7 @@
     <string name="text_default_pressure">0/mmHg</string>
     <string name="preference_level"><![CDATA[舒张压参考标准:\n高：> 90mmHg\n正常: 60–90mmHg\n低:< 60mmHg\n收缩压参考标准:\n高：>140mmHg\n正常: 90–140mmHg\n低: < 90mmHg]]></string>
     <string name="text_username">用户名</string>
-    <string name="text_default_time">2019-5-1 08:00:00</string>
+    <string name="text_default_time">2019–5–1 08:00:00</string>
     <string name="text_start_helper">串口助手</string>
     <string name="text_measure_save">保存</string>
     <string name="text_query_search">查询</string>

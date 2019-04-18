@@ -53,11 +53,11 @@ public class DataBaseManager implements DataBaseService {
                 ContentValues cv = new ContentValues();
                 for (int i = 0; i < users.size(); i++) {
                     UserBean user = users.get(i);
-                    cv.put("name",user.getName());
-                    cv.put("time",user.getTimeStr());
-                    cv.put("date",user.getDateStr());
-                    cv.put("dia_pressure",user.getDia_pressure());
-                    cv.put("sys_pressure",user.getSys_pressure());
+                    cv.put("name", user.getName());
+                    cv.put("time", user.getTimeStr());
+                    cv.put("date", user.getDateStr());
+                    cv.put("dia_pressure", user.getDia_pressure());
+                    cv.put("sys_pressure", user.getSys_pressure());
                     db.insert("users", null, cv);
                 }
                 emitter.onNext(true);
@@ -77,10 +77,10 @@ public class DataBaseManager implements DataBaseService {
             @Override
             public void subscribe(FlowableEmitter<List<UserBean>> emitter) throws Exception {
                 List<UserBean> dataList = new ArrayList<>();
-               // String sql = "SELECT * FROM users WHERE name = "+name;//错误的写法，应该解析name
+                // String sql = "SELECT * FROM users WHERE name = "+name;//错误的写法，应该解析name
                 SQLiteDatabase db = helper.getWritableDatabase();
-               // Cursor cursor = db.rawQuery(sql, null);
-                Cursor cursor = db.query("users",null,"name = ?",new String[]{name},null,null,null);
+                // Cursor cursor = db.rawQuery(sql, null);
+                Cursor cursor = db.query("users", null, "name = ?", new String[]{name}, null, null, null);
                 if (cursor.moveToFirst()) {
                     //遍历所有的数据
                     do {
@@ -98,9 +98,14 @@ public class DataBaseManager implements DataBaseService {
                 cursor.close();//关闭指针
                 db.close();//关闭数据库
 
-                emitter.onNext(dataList);//发射结果
-                emitter.onComplete();//完成事件
+                if (dataList.size() == 0) {
+                    emitter.onComplete();
+                } else {
+                    emitter.onNext(dataList);//发射结果
+                    emitter.onComplete();//完成事件
+                }
+
             }
-        },BackpressureStrategy.BUFFER);
+        }, BackpressureStrategy.BUFFER);
     }
 }
