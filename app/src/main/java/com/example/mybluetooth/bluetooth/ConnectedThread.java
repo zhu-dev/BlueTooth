@@ -2,12 +2,17 @@ package com.example.mybluetooth.bluetooth;
 
 import android.bluetooth.BluetoothSocket;
 import android.os.Handler;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 public class ConnectedThread extends Thread{
+
+    private static final String TAG = "ConnectedThread";
+    
+    
     private final BluetoothSocket mSocket;
     private final InputStream mInStream;
     private final OutputStream mOutStream;
@@ -69,6 +74,8 @@ public class ConnectedThread extends Thread{
     public void cancel() {
         try {
             mSocket.close();
-        } catch (IOException e) { }
+        } catch (IOException e) {
+            Log.e(TAG, "cancel: ---cancel-----"+e.getMessage());
+        }
     }
 }

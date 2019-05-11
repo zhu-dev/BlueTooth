@@ -153,6 +153,11 @@ public class MeasureActivity extends AppCompatActivity implements View.OnClickLi
         mConnectedThread.start();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mConnectedThread.cancel();
+    }
 
     @Override
     public void onClick(View v) {
